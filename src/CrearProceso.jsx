@@ -64,9 +64,9 @@ const CrearProceso = () => {
           <option value="" disabled>
             Modalidad seleccionada previamente
           </option>
-          <option value="Anual" >Anual</option>
+          <option value="Anual">Anual</option>
           <option value="semestral">Semestral </option>
-          <option value="trimestral" >Trimestral</option>
+          <option value="trimestral">Trimestral</option>
         </select>
       </label>
 
@@ -83,9 +83,15 @@ const CrearProceso = () => {
           <option value="" disabled>
             Carrera seleccionada previamente
           </option>
-          <option value="Ing. Informática - San Juan de los Morros">Ing. Informática - San Juan de los Morros</option>
-          <option value="Ing. Informática - Calabozo">Ing. Informática - Calabozo</option>
-          <option value="Medicina - San Juan de los Morros">Medicina - San Juan de los Morros</option>
+          <option value="Ing. Informática - San Juan de los Morros">
+            Ing. Informática - San Juan de los Morros
+          </option>
+          <option value="Ing. Informática - Calabozo">
+            Ing. Informática - Calabozo
+          </option>
+          <option value="Medicina - San Juan de los Morros">
+            Medicina - San Juan de los Morros
+          </option>
         </select>
       </label>
 
@@ -102,26 +108,33 @@ const CrearProceso = () => {
           <option value="" disabled>
             Seleccione un proceso
           </option>
-          <option value="Proceso de Carga de Horario">Proceso de Carga de Horario</option>
-          <option value="Proceso de Inscripción por carreras Semestrales">Proceso de Inscripción por carreras Semestrales</option>
-          <option value="Proceso de Validación de Inscripción">Proceso de Validación de Inscripción</option>
+          <option value="Proceso de Carga de Horario">
+            Proceso de Carga de Horario
+          </option>
+          <option value="Proceso de Inscripción por carreras Semestrales">
+            Proceso de Inscripción por carreras Semestrales
+          </option>
+          <option value="Proceso de Validación de Inscripción">
+            Proceso de Validación de Inscripción
+          </option>
         </select>
       </label>
-
-      <DatePicker
-        selectsRange={true}
-        minDate={new Date()}
-        startDate={startDate}
-        endDate={endDate}
-        onChange={(update) => {
-          setDateRange(update);
-        }}
-        withPortal
-      />
+      <label htmlFor="fechas">
+        <strong>Fechas</strong>
+        <DatePicker
+          selectsRange={true}
+          minDate={new Date()}
+          startDate={startDate}
+          endDate={endDate}
+          onChange={(update) => {
+            setDateRange(update);
+          }}
+          withPortal
+        />
+      </label>
 
       <button type="submit">Enviar</button>
     </form>
-  
   );
 };
 
