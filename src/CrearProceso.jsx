@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./Crearprocesos.css";
+import { Toaster, toast } from "sonner";
+import { es } from "date-fns/locale/es";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
 
 const CrearProceso = () => {
+  registerLocale("es", es);
   const [periodos, setPeriodos] = useState("");
   const [modalidad, setModalidad] = useState("");
   const [carrera, setCarrera] = useState("");
@@ -28,10 +33,8 @@ const CrearProceso = () => {
     setNombreProceso("");
     setModalidad("");
     setPeriodos("");
-
-    console.log(
-      `Se registró el proceso: ${nombreProceso} en modalidad ${modalidad} en la carrera ${carrera} durante el periodo ${periodos}. Las fechas son: Inicio: ${inicio}, Final: ${final}`
-    );
+    const p = `Se registró : ${nombreProceso} en modalidad ${modalidad} en la carrera ${carrera} durante el periodo ${periodos}. Inicio: ${inicio}, Final: ${final}`;
+    toast.success(p);
   };
 
   return (
@@ -133,11 +136,15 @@ const CrearProceso = () => {
           onChange={(update) => {
             setDateRange(update);
           }}
+          locale="es"
+          dateFormat="dd/MM/yyyy"
+          required
           withPortal
         />
       </label>
 
       <button type="submit">Enviar</button>
+      <Toaster richColors />
     </form>
   );
 };
