@@ -19,15 +19,19 @@ const CrearProceso = () => {
     event.preventDefault();
 
     // Formateao de fechas
-    const inicio = startDate ? startDate.toLocaleDateString("es-ES") : "No definido";
+    const inicio = startDate
+      ? startDate.toLocaleDateString("es-ES")
+      : "No definido";
     const final = endDate ? endDate.toLocaleDateString("es-ES") : "No definido";
-    setCarrera("")
-    setDateRange("")
-    setNombreProceso("")
-    setModalidad("")
-    setPeriodos("")
+    setCarrera("");
+    setDateRange("");
+    setNombreProceso("");
+    setModalidad("");
+    setPeriodos("");
 
-    console.log(`Se registró el proceso: ${nombreProceso} en modalidad ${modalidad} en la carrera ${carrera} durante el periodo ${periodos}. Las fechas son: Inicio: ${inicio}, Final: ${final}`);
+    console.log(
+      `Se registró el proceso: ${nombreProceso} en modalidad ${modalidad} en la carrera ${carrera} durante el periodo ${periodos}. Las fechas son: Inicio: ${inicio}, Final: ${final}`
+    );
   };
 
   return (
